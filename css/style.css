@@ -134,12 +134,19 @@ body {
     padding-bottom: 1.5em;
   }
 }
+
+
 @media screen and (max-width: 767px) {
+  .card {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 420px) {
   .card {
     width: 100%;
   }
 }
-
 
 
 @media screen and (max-width: 767px) {
@@ -171,7 +178,7 @@ body {
 
   .action_item div {
     width: 34%;
-    font-size: 0.9em;
+    font-size: 0.76em;
   }
 
   .card__inner {
@@ -255,7 +262,7 @@ body {
 
 
 .action_item {
-    padding-bottom: 3em;
+    padding-bottom: 2.1em;
 
 }
 
@@ -314,6 +321,12 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
+.card {
+    width: calc((100% / 2) - 10px);
+}
+}
+
+@media screen and (max-width: 420px) {
   .card {
     width: 100%;
   }
