@@ -30,3 +30,39 @@ $cell.find('.js-collapser').click(function() {
   $cell.not($thisCell).removeClass('is-inactive');
 
 });
+
+
+var $cards = $('.cards');
+var $grouping = $('.groupings');
+
+$grouping.on('click', function(){
+
+  if ($thisCell.hasClass('are-collapsed') ){
+    $thisCell.removeClass('are-collapsed')
+  }else{
+    $thisCell.addClass('are-collapsed')
+  }
+
+
+  console.log($thisCell)
+})
+
+// $cards.find('.js-expander').click(function() {
+
+//   var $thisCell = $(this).closest('.cards');
+
+//   if ($thisCell.hasClass('are-collapsed')) {
+//     $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+//     $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+    
+//     if ($cell.not($thisCell).hasClass('is-inactive')) {
+//       //do nothing
+//     } else {
+//       $cell.not($thisCell).addClass('is-inactive');
+//     }
+
+//   } else {
+//     $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+//     $cell.not($thisCell).removeClass('is-inactive');
+//   }
+// });
