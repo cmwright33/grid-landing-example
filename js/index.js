@@ -37,6 +37,7 @@ var $grouping = $('.groupings');
 
 $grouping.on('click', function(){
 
+  
   if ($thisCell.hasClass('are-collapsed') ){
     $thisCell.removeClass('are-collapsed')
   }else{
