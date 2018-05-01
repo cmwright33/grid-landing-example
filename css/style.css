@@ -453,6 +453,7 @@ label {
   border-radius: 10px;
   position: relative;
   vertical-align: middle;
+  pointer-events: none;
 }
 
 label:after {
