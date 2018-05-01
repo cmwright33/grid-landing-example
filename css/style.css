@@ -19,9 +19,10 @@ body {
 }
 
 .logo{
-  position: relative;
-  top: 6px;
-  left: 7px;
+    position: relative;
+    top: 4px;
+    left: 7px;
+    height: 46px;
 }
 
 #Layer_1 {
@@ -684,4 +685,117 @@ h1 {
 
 .sort-grouping a{
   text-decoration: none;
+}
+
+
+
+
+
+/* cheron breadcrumb */
+
+
+#triangle-right-1,
+#triangle-right-2,
+#triangle-right-3,
+#triangle-right-4 {
+    width: 0;
+    height: 0;
+    border-top: 23px solid transparent;
+    border-left: 40px solid #4E5258;
+    border-bottom: 23px solid transparent;
+    display: inline-block;
+    position: relative;
+    left: -6px;
+    z-index: 2;
+}
+
+#triangle-right-2 {
+    left: -60px;
+    border-left: 40px solid #181B1F;
+}
+
+#triangle-right-3 {
+    left: -108px;
+    padding-left: 50px;
+}
+
+
+
+.breadcrumb {
+    display: inline-block;
+    position: relative;
+    left: 20px;
+}
+
+.crumb-1,
+.crumb-2,
+.crumb-3,
+.crumb-4 {
+    display: inline-block;
+    height: 46px;
+    line-height: 1.9em;
+    font-size: 1.5em;
+    padding-left: 2px;
+    vertical-align: bottom;
+    font-weight: 500;
+    background: #4E5258;
+    margin: 0px;
+    position: relative;
+    top: -4px;
+    color: #FFFFFF;
+}
+
+
+.crumb-1 {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.crumb-1 a {
+    color: #fff;
+    cursor: pointer;
+}
+
+.crumb-2 {
+    padding-left: 50px;
+    left: -50px;
+    padding-right: 5px;
+    background: #181B1F;
+}
+
+
+
+.crumb-3 {
+    left: -104px;
+    padding-left: 50px;
+}
+
+
+.crumb-4 {
+    padding-left: 50px;
+    left: -200px;
+    background: #181B1F;
+    color: #fff;
+}
+
+.crumb-4 a{
+  color: #fff;
+  text-decoration:none; 
+}
+
+.crumb-4 a:hover {
+  color: #fff;
+  text-decoration-line: underline; 
+}
+
+.breadcrumb {
+    display: inline-block;
+    position: relative;
+    left: 20px;
+    height: 46px;
+}
+
+.img-wrapper a {
+    width: inherit;
+    height: inherit;
 }
