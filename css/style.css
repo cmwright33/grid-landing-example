@@ -233,6 +233,7 @@ body {
   color: #fff;
   background: grey;
   margin: auto;
+  font-size: 0.9em;
 }
 .card__expander .fa {
   font-size: 0.75em;
