@@ -470,7 +470,7 @@ label:after {
 }
 
 input:checked + label {
-  background: #bada55;
+    background: darkgrey;
 }
 
 input:checked + label:after {
@@ -558,7 +558,16 @@ h1 {
     opacity: 1;
     -webkit-transform-origin: right top;
     transform-origin: right top;
+    text-align: center;
+    font-size: 1em;
 }
+
+#input.season-text{
+    text-align: center;
+    font-size: 0.75em;
+}
+
+
 #input.open {
   opacity: 0;
 }
@@ -642,6 +651,10 @@ h1 {
 .button-group i.fa.fa-angle-down {
     left: 18px;
     position: relative;
+}
+
+.season-text i.fa.fa-angle-down{
+  left: 0;
 }
 
 .sort-grouping {
