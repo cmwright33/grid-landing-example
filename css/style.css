@@ -1094,6 +1094,28 @@ li.nav-label {
     display:none;
   }
 
+/*  .nav-mobile .menu-container .menu-sidebar li.home-menu {
+    display: none;
+  }*/
+}
+
+.nav-mobile .menu-container .menu-sidebar li.nav-label:hover {
+    background: none;
+}
+
+.nav-mobile .menu-container .menu-sidebar li.home-menu:hover {
+    background: none;
+    border-left: none;
+}
+
+.menu-sidebar i.fa.fa-home {
+    font-size: 30px;
+}
+
+.nav-mobile .menu-container .menu-sidebar li.home-menu {
+    height: 30px;
+    line-height: 0;
+    top: 10px;
 }
 
 
