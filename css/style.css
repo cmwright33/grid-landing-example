@@ -34,6 +34,8 @@ body {
 .wrapper {
   margin: 5em auto;
   max-width: 1000px;
+  position: relative;
+  z-index: 1;
 /*  background-color: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);*/
 }
@@ -91,11 +93,12 @@ body {
 }
 
 
-.mini-menu{
-  display: none;
-  fill: #fff;
-  position: relative;
-  left: 5px;
+.mini-menu {
+    display: none;
+    fill: #fff;
+    position: absolute;
+    left: 0px;
+    top: 5px;
 }
 
 .action_item div {
@@ -159,13 +162,16 @@ body {
     left: 9%;
   }
 
-  .mini-menu{
-    display: inline-block;
-  }
-
-  .menu{
-    display: none;
-  }
+.nav-mobile .menu-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    display: block;
+    top: -46px;
+    width: 40px;
+}
 
   .wrapper h3{
     text-align: center;
@@ -325,6 +331,10 @@ body {
   .action_item {
     padding-bottom: 1.5em;
   }
+
+  .breadcrumb{
+    display:none;
+  }
 }
 @media screen and (max-width: 767px) {
 .card {
@@ -347,6 +357,10 @@ body {
 
   .mini-menu{
     display: inline-block;
+  }
+
+  .breadcrumb{
+    display:none;
   }
 
   .menu{
@@ -828,6 +842,8 @@ h1 {
   font-size: 18px;
   list-style-type: none;
   box-shadow: 0 5px 5px -5px #333;
+  position: relative;
+  z-index: 2;
 }
 .nav-mobile:after {
   content: "";
@@ -839,9 +855,9 @@ h1 {
   width: 65px;
   padding: 7px;
 }
-.nav-mobile svg path {
+/*.nav-mobile svg path {
   fill: #fff;
-}
+}*/
 .nav-mobile svg.icon-close {
   display: none;
   padding: 15px;
@@ -913,8 +929,8 @@ h1 {
   display: block;
   width: 65vw;
   bottom: 0;
-  background: #181B1F;
-  color: #333;
+  background: #4E5258;
+  color: #fff;
   position: fixed;
   transform: translateX(-405px);
   transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
@@ -928,7 +944,7 @@ h1 {
   position: absolute;
   line-height: 50px;
   font-size: 32px;
-  color: #555;
+  color: #fff;
   top: 0;
   z-index: 0;
 }
@@ -944,11 +960,16 @@ h1 {
   font-size: 16px;
   text-align: left;
   position: relative;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /*border-bottom: 1px solid rgba(0, 0, 0, 0.1);*/
   padding-left: 20px;
 }
 .nav-mobile .menu-container .menu-sidebar li:hover {
-  background: #eee;
+    background: #A6A6A6;
+    border-left: 5px solid #FFA000;
+}
+
+.nav-mobile .menu-container .menu-sidebar li.nav-label:hover {
+    border-left: 0px solid #4E5258;
 }
 .nav-mobile .menu-container .menu-sidebar li .menu-sub {
   position: fixed;
@@ -957,7 +978,7 @@ h1 {
   bottom: 0;
   width: 0;
   overflow: hidden;
-  background: #181B1F;
+  background: #4E5258;
   visibility: hidden;
   transition: all 0.3s cubic-bezier(0, 0, 0.3, 1);
   border-left: 1px solid #ccc;
@@ -980,6 +1001,11 @@ h1 {
   display: block;
   color: #fff;
 }
+
+.submenu-label{
+  text-indent: 50px;
+}
+
 .nav-mobile .menu-container .menu-sidebar li .submenu-toggle {
   display: none;
 }
@@ -990,9 +1016,9 @@ h1 {
   transition: width 0.35s cubic-bezier(0, 0, 0.3, 1);
 }
 
-.nav-mobile svg path{
+/*.nav-mobile svg path{
   fill:#000;
-}
+}*/
 
 
 li.nav-label {
@@ -1008,10 +1034,70 @@ li.nav-label {
 }
 
 .nav-mobile .menu-container .menu-sidebar li.nav-label:hover {
-    background: #181B1F;
+    background: #4E5258;
 }
 
 .wrapper-dash {
     margin: 5em auto;
     max-width: 1300px;
 }
+
+
+.nav-icon-container {
+    width: 30px;
+    height: 80%;
+    position: absolute;
+    line-height: 50px;
+    font-size: 32px;
+    color: #555;
+    top: 18%;
+    z-index: 0;
+}
+
+.nav-icon-container svg {
+    height: inherit;
+    width: inherit;
+    padding: inherit;
+}
+
+/*.nav-icon-container svg path{
+  fill: #fff;
+}*/
+
+
+@media screen and (max-width: 767px) {
+
+  .breadcrumb{
+    display:none;
+  }
+
+  .nav-mobile .menu-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    display: block;
+    top: -46px;
+    width: 40px;
+    left: auto;
+  }
+
+  svg.icon-close {
+    position: absolute;
+    left: -13px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .breadcrumb{
+    display:none;
+  }
+
+}
+
+
+@media screen and (max-width: 767px) {
+  .nav .logo {
+    left: 12%;
+  }
