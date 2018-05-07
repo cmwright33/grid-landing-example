@@ -32,7 +32,7 @@ body {
 }
 
 .wrapper {
-  margin: 5em auto;
+  margin: 2em auto;
   max-width: 1000px;
   position: relative;
   z-index: 1;
@@ -372,7 +372,7 @@ body {
   }
 
   .wrapper {
-    margin: auto;
+    margin: 1em auto;
   }
 
   .card__inner .fa {
@@ -437,6 +437,20 @@ body {
   .card__expander {
     width: calc(200% + 30px);
   }
+
+   .wrapper h3{
+    text-align: center;
+  }
+
+}
+
+@media screen and (min-width: 991px) and (max-width: 1100px) {
+
+   .wrapper h3{
+    position: relative;
+    left: 6%;
+  }
+
 }
 
 
@@ -1118,8 +1132,27 @@ li.nav-label {
     top: 10px;
 }
 
+.wrapper h3 {
+    margin: 4px;
+}
 
 @media screen and (max-width: 767px) {
   .nav .logo {
     left: 12%;
   }
+
+}
+
+
+@media screen and (max-height: 767px) {
+
+/*  .card__inner hr, .card__inner .action_item {
+
+      margin: 3px;
+      visibility: collapse;
+      padding: 0px;
+      height: 0;
+
+  }*/
+
+}
