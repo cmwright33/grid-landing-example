@@ -956,7 +956,7 @@ h1 {
 }
 .nav-mobile .menu-container .menu-sidebar .arrow {
   position: absolute;
-  line-height: 50px;
+  line-height: 35px;
   font-size: 32px;
   color: #fff;
   top: 0;
@@ -969,9 +969,9 @@ h1 {
   right: 25px;
 }
 .nav-mobile .menu-container .menu-sidebar li {
-  height: 55px;
-  line-height: 55px;
-  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
   text-align: left;
   position: relative;
   /*border-bottom: 1px solid rgba(0, 0, 0, 0.1);*/
@@ -1061,11 +1061,11 @@ li.nav-label {
     width: 30px;
     height: 80%;
     position: absolute;
-    line-height: 50px;
-    font-size: 32px;
+    line-height: 40px;
+    font-size: 20px;
     color: #555;
-    top: 18%;
     z-index: 0;
+    top: 15%;
 }
 
 .nav-icon-container svg {

@@ -100,7 +100,13 @@ $(document).ready(function() {
 
     $('#dropdown-menu').add(triggerOpen).toggleClass('open');
     // m.set('triangle').size(10);
+
+      $('.icon-open, .mini-menu, .menu-button').on('click', function() {   $('body').css('overflow', 'hidden'); $('.menu-sidebar').css('overflow', 'scroll') })
+      $('.icon-close').on('click', function() {   $('body').css('overflow', ''); $('.menu-sidebar').css('overflow', '') })
   });
+
+
+
 
 });
 
