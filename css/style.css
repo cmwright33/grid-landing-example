@@ -78,6 +78,11 @@ body {
     display: inherit;
 }
 
+.card svg {
+    position: relative;
+    margin: 25% auto;
+}
+
 .img-wrapper {
   padding: 10px;
   background-color: #565D67;
