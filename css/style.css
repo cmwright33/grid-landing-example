@@ -80,7 +80,7 @@ body {
 
 .card svg {
     position: relative;
-    margin: 25% auto;
+    margin: 5% auto;
 }
 
 .img-wrapper {
@@ -114,9 +114,11 @@ body {
 }
 
 .card__inner .fa {
-  width: 20%;
   margin-top: .25em;
-  font-size: 1.3em;
+  font-size: 1.6em;
+  position: absolute;
+  right: 12px;
+  top: 1px;
 }
 
 .card__inner {
@@ -1160,4 +1162,20 @@ li.nav-label {
 
   }*/
 
+}
+
+
+.tile-title {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 30px;
+}
+
+
+.tile-title div {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 27%;
 }
