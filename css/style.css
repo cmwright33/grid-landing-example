@@ -83,7 +83,6 @@ body {
   background-color: #565D67;
   border-radius: 4px 4px 0px 0px;
   height: 100px;
-  width: 100%;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -110,9 +109,12 @@ body {
 }
 
 .card__inner .fa {
-  width: 20%;
-  margin-top: .25em;
-  font-size: 1.3em;
+    width: 20%;
+    margin-top: .25em;
+    font-size: 1.3em;
+    position: absolute;
+    bottom: 3px;
+    right: 0px;
 }
 
 .card__inner {
