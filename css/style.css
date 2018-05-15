@@ -78,16 +78,12 @@ body {
     display: inherit;
 }
 
-.card svg {
-    position: relative;
-    margin: 5% auto;
-}
-
 .img-wrapper {
   padding: 10px;
   background-color: #565D67;
   border-radius: 4px 4px 0px 0px;
   height: 100px;
+  width: 100%;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
@@ -114,11 +110,9 @@ body {
 }
 
 .card__inner .fa {
+  width: 20%;
   margin-top: .25em;
-  font-size: 1.6em;
-  position: absolute;
-  right: 12px;
-  top: 1px;
+  font-size: 1.3em;
 }
 
 .card__inner {
@@ -1081,35 +1075,6 @@ li.nav-label {
     padding: inherit;
 }
 
-.nav_anchor {
-    display: none;
-    z-index: 1000;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 101%;
-    color: white;
-    text-align: center;
-
-}
-
-.nav_anchor div {
-    width: 33%;
-    text-align: center;
-    height: 40px;
-    background: #181B1F;
-    border: 1px solid #1F242B;
-}
-
-
-.nav_anchor div a {
-    position: relative;
-    text-decoration: none;
-    top: 20%;
-    color: #eceef1;
-    text-transform: uppercase;
-}
-
 /*.nav-icon-container svg path{
   fill: #fff;
 }*/
@@ -1119,10 +1084,6 @@ li.nav-label {
 
   .breadcrumb{
     display:none;
-  }
-
-  .nav_anchor {
-    display: inline-block;
   }
 
   .nav-mobile .menu-button {
@@ -1148,9 +1109,6 @@ li.nav-label {
     display:none;
   }
 
-  .nav_anchor {
-    display: none;
-  }
 /*  .nav-mobile .menu-container .menu-sidebar li.home-menu {
     display: none;
   }*/
@@ -1184,10 +1142,6 @@ li.nav-label {
     left: 12%;
   }
 
-  .nav_anchor{
-    display: flex;
-  }
-
 }
 
 
@@ -1202,35 +1156,4 @@ li.nav-label {
 
   }*/
 
-}
-
-
-.tile-title {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    height: 30px;
-}
-
-
-.tile-title div {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    top: 27%;
-}
-
-
-a[ id= "events" ]:target ~ .wrapper .cards {
-    -webkit-transform: translateY( 0px);
-    transform: translateY( 0px );
-}
-
-a[ id= "audience" ]:target ~ .wrapper .cards {
-    -webkit-transform: translateY( -500px );
-    transform: translateY( -500px );
-}
-a[ id= "products" ]:target ~ .wrapper .cards {
-    -webkit-transform: translateY( -1000px );
-    transform: translateY( -1000px );
 }
