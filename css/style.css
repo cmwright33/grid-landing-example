@@ -108,6 +108,9 @@ body {
     font-size: 0.85em;
 }
 
+.tile-title div{
+  padding: 0.2em;
+}
 .card__inner .fa {
     width: 20%;
     margin-top: .25em;
