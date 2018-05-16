@@ -1152,13 +1152,63 @@ li.nav-label {
 
 @media screen and (max-height: 767px) {
 
-/*  .card__inner hr, .card__inner .action_item {
+  .nav_anchor {
+    display: inline-block;
+  }
+}
 
-      margin: 3px;
-      visibility: collapse;
-      padding: 0px;
-      height: 0;
 
-  }*/
+.nav-icon-container {
+    width: 30px;
+    height: 80%;
+    position: absolute;
+    line-height: 40px;
+    font-size: 20px;
+    color: #555;
+    z-index: 0;
+    top: 15%;
+}
 
+.nav-icon-container svg {
+    height: inherit;
+    width: inherit;
+    padding: inherit;
+}
+
+.nav_anchor {
+    display: none;
+    z-index: 1000;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 101%;
+    color: white;
+    text-align: center;
+
+}
+
+.nav_anchor div {
+    width: 33%;
+    text-align: center;
+    height: 40px;
+    background: #181B1F;
+    border: 1px solid #1F242B;
+    float: left;
+}
+
+
+.nav_anchor div a {
+    position: relative;
+    text-decoration: none;
+    top: 20%;
+    color: #eceef1;
+    text-transform: uppercase;
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .nav_anchor {
+    display: inline-block;
+  }
 }
