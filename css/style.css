@@ -63,15 +63,24 @@ body {
 .cards {
   padding: 1px;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: wrap;
   transition: all 0.2s ease-in-out;
 }
 
+
 .card {
-  margin: 5px;
-  width: calc((100% / 6) - 10px);
+  margin: 5px; 
+  width: calc((100% / 6) - 10px); 
   transition: all 0.2s ease-in-out;
 }
+
+
+.card-car {
+  margin: 5px; 
+ /* width: calc((100% / 6) - 10px); */
+  transition: all 0.2s ease-in-out;
+}
+
 
 .card span {
     padding-top: 8px;
@@ -109,14 +118,13 @@ body {
 }
 
 .tile-title div{
-  padding: 0.2em;
+  padding: 0.4em;
 }
 .card__inner .fa {
     width: 20%;
-    margin-top: .25em;
     font-size: 1.3em;
     position: absolute;
-    bottom: 3px;
+    bottom: 8px;
     right: 0px;
 }
 
@@ -131,8 +139,9 @@ body {
   text-align: center;
   transition: all 0.2s ease-in-out;
   border-radius: 4px;
-      height: inherit;
-    /*min-height: 100%;*/
+  height: inherit;
+  overflow: hidden;
+  /*min-height: 100%;*/
 }
 
 @media screen and (max-width: 991px) {
@@ -1184,13 +1193,13 @@ li.nav-label {
     width: 101%;
     color: white;
     text-align: center;
-
+    height: 70px;
 }
 
 .nav_anchor div {
     width: 33%;
     text-align: center;
-    height: 40px;
+    height: 70px;
     background: #181B1F;
     border: 1px solid #1F242B;
     float: left;
@@ -1200,9 +1209,15 @@ li.nav-label {
 .nav_anchor div a {
     position: relative;
     text-decoration: none;
-    top: 20%;
+    top: 5%;
     color: #eceef1;
     text-transform: uppercase;
+}
+
+.nav_anchor i {
+    width: 100%;
+    padding: 6px 1px 0 1px;
+    font-size: 1.5em;
 }
 
 
@@ -1211,4 +1226,113 @@ li.nav-label {
   .nav_anchor {
     display: inline-block;
   }
+
+  .corner-ribbon.top-left {
+    top: 25px;
+    left: -65px;
+  }
+}
+
+
+/* ribbon contatiner */
+
+
+/* The ribbons */
+
+.corner-ribbon{
+  width: 200px;
+  background: #e43;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+/* Custom styles */
+
+/*.corner-ribbon.sticky{
+  position: fixed;
+}*/
+
+.corner-ribbon.shadow{
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+/* Different positions */
+.corner-ribbon.top-left{
+    top: 25px;
+    left: -64px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.corner-ribbon div {
+    width: 40%;
+    margin: auto;
+    font-size: 0.7em;
+    line-height: 1.5em;
+    padding: 4px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+  .corner-ribbon.top-left {
+    top: 25px;
+    left: -55px;
+  }
+
+  .corner-ribbon div {
+    width: 50%;
+    line-height: 1.3em;
+  }
+}
+
+
+
+
+/* carousel */
+
+.carousel{
+  padding: 0 30px;
+}
+.carousel__button--prev, .carousel__button--next{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.carousel__button--prev{
+  left: 0;
+}
+.carousel__button--next{
+  right: 0;
+}
+.carousel__container {
+  overflow: hidden;
+  height: 200px;
+}
+.carousel__list{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+.carousel__list.unwrap{
+  flex-wrap: nowrap;
+}
+.carousel__item{
+  flex: 1 0 150px;
+  /*max-width: 100px; */
+  height: 130px;
+  background-color: #ccc;
+  text-align: center;
+  /*line-height: 100px;*/
+  /*border: 1px solid #fff;*/
 }
