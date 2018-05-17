@@ -130,9 +130,9 @@ body {
 }
 
 .highlight{
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
     font-weight: 700;
     background: #e43;
+    text-shadow: 0px 1px 1px #6b6b6b, 0px 0px 0px #f2f2f2;
 }
 
 .highlight:hover{
