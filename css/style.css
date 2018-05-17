@@ -36,6 +36,7 @@ body {
   max-width: 1000px;
   position: relative;
   z-index: 1;
+  scroll-behavior: smooth;
 /*  background-color: #fff;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);*/
 }
@@ -124,8 +125,14 @@ body {
     width: 20%;
     font-size: 1.3em;
     position: absolute;
-    bottom: 8px;
+    bottom: 5px;
     right: 0px;
+}
+
+.highlight{
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    font-weight: 700;
+    background: #e43;
 }
 
 .card__inner {
@@ -254,7 +261,7 @@ body {
   color: #fff;
   background: grey;
   margin: auto;
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 .card__expander .fa {
   font-size: 0.75em;
@@ -440,6 +447,27 @@ body {
     width: calc(600% + 60px);
   }
 }
+
+@media screen and (min-width: 416px) and (max-width: 768px) {
+  .card__expander{
+    width: calc(200%);
+  }
+
+  .card .card__expander{
+    left: -100%;
+  }
+
+  .card:nth-of-type(odd) .card__expander{
+    left: 0%;
+  }
+
+/*  .card__expander:nth-of-type(odd){
+    left: 0%;
+  }*/
+}
+
+
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .card:nth-of-type(2n+2) .card__expander {
     margin-left: calc(-100% - 30px);
@@ -1302,12 +1330,16 @@ li.nav-label {
 /* carousel */
 
 .carousel{
-  padding: 0 30px;
+  padding: 0px 40px;
+  position: relative;
+  /* height: inherit; */
+  display: flex;
+  width: 100%;
+  overflow: scroll;
 }
 .carousel__button--prev, .carousel__button--next{
   position: absolute;
   top: 0;
-  bottom: 0;
 }
 .carousel__button--prev{
   left: 0;
@@ -1316,23 +1348,52 @@ li.nav-label {
   right: 0;
 }
 .carousel__container {
-  overflow: hidden;
-  height: 200px;
+  /* overflow: hidden; */
+  /* height: 200px; */
+  /* position: absolute; */
+  top: 0px;
+  width: 100%;
+  height: auto;
+  display: flex;
 }
 .carousel__list{
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .carousel__list.unwrap{
   flex-wrap: nowrap;
 }
 .carousel__item{
-  flex: 1 0 150px;
-  /*max-width: 100px; */
-  height: 130px;
-  background-color: #ccc;
+  flex: 0 0 150px;
+  min-width: 150px;
+  height: auto;
+  /* background-color: #ccc; */
   text-align: center;
   /*line-height: 100px;*/
   /*border: 1px solid #fff;*/
 }
+
+
+button.carousel__button--prev.js-carousel-button, button.carousel__button--next.js-carousel-button {
+    height: 95%;
+    border: none;
+    font-size: 2em;
+    background-color: #565D67;
+    color: #FFF;
+    box-shadow: 2px 2px 2px grey;
+    margin-top: 0.1%;
+}
+
+.is-inactive {
+    height: 130px;
+}
+
+.carousel_wrapper{
+    position: relative;
+    min-height: auto;
+    display: flex;
+    width: 100%;
+}
+
+
