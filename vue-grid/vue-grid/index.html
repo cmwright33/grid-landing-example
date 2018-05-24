@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vue app</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app" class="cards">
+  <div v-for="event in events" class=" card [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+        <div class="img-wrapper">
+          <a :href="event.icon" ></a>
+        </div>
+         <div class="tile-title">
+            <div>{{event.name}}</div>
+            <i class="fa fa-angle-down"></i>
+         </div>
+        </div>
+        <div class="card__expander">
+          <i class="fa fa-close [ js-collapser ]"></i>
+          <div v-for="item in event.links">
+            <div>{{item.link}}</div>
+          </div>
+          <div>2017 – 18 NHL Regular Season</div>
+          <div>2018 NHL SCP</div>
+          <div>2018 – 19 NHL Regular Season</div>
+        </div>
+    </div>
+</div>
+
+  <script>
+
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        events: 
+
+        [
+     		{
+        		name: "NHL",
+        		icon: "www.google.com",
+        		links: [
+        			{ link:"www.google.com"},
+        			{ link:"www.google.com"},
+        			{ link:"www.google.com"},
+        			{ link:"www.google.com"}
+        		]
+         	},
+         	{
+        		name: "NFL",
+        		icon: "www.google.com",
+        		links: [
+        			{ link:"www.google.com"},
+        			{ link:"www.google.com"},
+        			{ link:"www.google.com"},
+        			{ link:"www.google.com"}
+        		]	
+        	},
+        	{
+
+        		name: "NASCAR",
+        		icon: "www.google.com",
+        		links: [
+        			{link:"www.google.com"},
+        			{link:"www.google.com"},
+        			{link:"www.google.com"},
+        			{link:"www.google.com"}
+        		]
+            },
+            {
+        		name: "PREMIER LEAGUE",
+        		icon: "www.google.com",
+        		links: [
+        			{link:"www.google.com"},
+        			{link:"www.google.com"},
+        			{link:"www.google.com"},
+        			{link:"www.google.com"}
+        		]
+
+        	}
+        ]
+      }
+    })
+  </script>
+</body>
+</html>

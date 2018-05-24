@@ -1,0 +1,20 @@
+
+<div class="cards">
+  <div *ngFor="let event of events" class=" card [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+        <div class="img-wrapper">
+          <a :href="event.icon" ></a>
+        </div>
+         <div class="tile-title">
+            <div>{{event.name}}</div>
+            <i class="fa fa-angle-down"></i>
+         </div>
+        </div>
+        <div class="card__expander">
+          <i class="fa fa-close [ js-collapser ]"></i>
+          <div *ngFor="let item of event.links">
+            <div>{{item.link}}</div>
+          </div>
+        </div>
+    </div>
+</div>
