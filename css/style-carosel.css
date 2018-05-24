@@ -21,10 +21,27 @@
   position: relative;
   transform: translateX(100%);
 }
+
+button.left.toggle {
+    left: -50px;
+}
+
+button.right.toggle {
+    right: -50px;
+} 
+
 @media (min-width: 30em) {
   .carousel {
     left: -50%;
     transform: translateX(50%);
+  }
+
+  button.right.toggle {
+    right: -5px;
+  }
+
+  button.left.toggle {
+      left: -4px;
   }
 }
 @media (min-width: 40em) {
@@ -46,14 +63,6 @@
   .carousel.is-reversing {
     transform: translateX(-33.33333%);
   }
-}
-
-button.left.toggle {
-    left: -50px;
-}
-
-button.right.toggle {
-    right: -50px;
 }
 
 @media (min-width: 64em){
@@ -154,7 +163,7 @@ h2 {
 }
 @media (min-width: 30em) {
   .carousel {
-    left: -50%;
+    left: -40%;
     transform: translateX(50%);
   }
 }
@@ -202,7 +211,7 @@ h2 {
 }
 @media (min-width: 30em) {
   .carousel-seat {
-    flex-basis: 50%;
+    flex-basis: 45%;
   }
 }
 
@@ -431,7 +440,7 @@ body {
 
 @media screen and (max-width: 991px) {
   .cards .card {
-     width: calc((100% / 3) - 30px); 
+     width: calc((100% / 4) - 30px); 
   }
 
   .card__inner {
@@ -457,6 +466,22 @@ body {
 @media screen and (max-width: 420px) {
   .cards .card {
     width: 100%;
+  }
+
+  li.carousel-seat {
+    flex-basis: 85%;
+ }
+
+ .carousel {
+    left: 28px;
+  }
+
+  button.left.toggle {
+    left: -5px;
+  }
+
+    button.right.toggle {
+    right: -5px;
   }
 }
 
@@ -625,7 +650,7 @@ body {
 
 @media screen and (max-width: 991px) {
   .cards .card {
-     width: calc((100% / 3) - 30px); 
+     width: calc((100% / 4) - 30px); 
   }
 
   .card__inner {
@@ -744,6 +769,8 @@ body {
   .cards .card:nth-of-type(odd) .card__expander{
     left: 0%;
   }
+
+
 
 /*  .card__expander:nth-of-type(odd){
     left: 0%;
