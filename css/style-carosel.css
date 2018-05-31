@@ -2,6 +2,20 @@
   overflow: hidden;
 }
 
+.button-nav {
+    height: 30px;
+    /* width: 200px; */
+    background: #494D53;
+    position: absolute;
+    top: 8px;
+    right: 100px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    text-align: center;
+    padding: 5px 20px;
+    color: #fff;
+}
+
 .wrapper {
   margin: 2em auto;
   max-width: 1000px;
@@ -495,6 +509,10 @@ body {
 @media screen and (max-width: 767px) {
   .nav .logo {
     left: 9%;
+  }
+
+  .button-nav{
+    display: none;
   }
 
 .nav-mobile .menu-button {
