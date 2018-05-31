@@ -177,8 +177,8 @@ h2 {
 
 @media (min-width: 40em) {
   .carousel {
-    left: -20%;
-    transform: translateX(20%);
+    left: 0%;
+    /*transform: translateX(20%);*/
   }
 }
 
@@ -473,7 +473,13 @@ body {
  }
 
  .carousel {
-    left: 28px;
+    /*left: 28px;*/
+    left: 0px;
+    flex-flow: column;
+  }
+
+  .controls{
+    display: none;
   }
 
   button.left.toggle {
@@ -724,36 +730,66 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-  .cards .card:nth-of-type(3n+2) .card__expander {
+  .carousel-seat div[style*="order: 1;"]{
+    margin-left: calc(0%);
+  }
+
+  .carousel-seat div[style*="order: 2;"]{
+    margin-left: calc(-100%);
+  }
+
+  .carousel-seat div[style*="order: 3;"]{
+    margin-left: calc(-200%);
+  }
+
+  .carousel-seat div[style*="order: 4;"]{
+    margin-left: calc(-300%);
+  }
+
+  .carousel-seat:nth-of-type(2) .card__expander {
+    margin-left: calc(0%);
+  }
+  .carousel-seat:nth-of-type(3) .card__expander {
+    margin-left: calc(-100%);
+  }
+
+  .carousel-seat:nth-of-type(4) .card__expander {
+    margin-left: calc(-200%);
+  }
+
+  .carousel-seat:nth-of-type(5) .card__expander {
+    margin-left: calc(-300%);
+  }
+  .carousel-seat:nth-of-type(6) .card__expander {
+    margin-left: calc(-400%);
+  }
+
+  .card:nth-of-type(3n+2) .card__expander {
     margin-left: calc(-100% - 10px);
   }
 
-  .cards .card:nth-of-type(3n+3) .card__expander {
+  .card:nth-of-type(3n+3) .card__expander {
     margin-left: calc(-200% - 20px);
   }
 
-  .cards .card:nth-of-type(4n) .card__expander {
+  .card:nth-of-type(4n) .card__expander {
     margin-left: calc(-300% - 30px);
   }
 
-  .cards .card:nth-of-type(3n+4) {
+  .card:nth-of-type(3n+4) {
     clear: left;
   }
 
-  .cards .card:nth-of-type(6n) .card__expander {
+  .card:nth-of-type(6n) .card__expander {
     margin-left: calc(-500% - 50px);
   }
 
- .cards .card:nth-of-type(5n) .card__expander {
+ .card:nth-of-type(5n) .card__expander {
     margin-left: calc(-400% - 40px );
   }
 
-/*  .card:nth-of-type(3n+4) {
-    margin-left: calc(-300% - 60px);
-  }*/
-
   .card__expander {
-    width: calc(600% + 60px);
+    width: calc(300%);
   }
 }
 
