@@ -326,7 +326,7 @@ body {
 }
 .card.is-expanded .card__expander {
   max-height: 1000px;
-  min-height: 200px;
+  min-height: 150px;
   overflow: visible;
   margin-top: 30px;
   opacity: 1;
