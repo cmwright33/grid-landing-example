@@ -748,27 +748,12 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-  .carousel-seat div[style*="order: 1;"]{
-    margin-left: calc(0%);
-  }
-
-  .carousel-seat div[style*="order: 2;"]{
-    margin-left: calc(-100%);
-  }
-
-  .carousel-seat div[style*="order: 3;"]{
-    margin-left: calc(-200%);
-  }
-
-  .carousel-seat div[style*="order: 4;"]{
-    margin-left: calc(-300%);
-  }
 
   .carousel-seat:nth-of-type(2) .card__expander {
     margin-left: calc(0%);
   }
   .carousel-seat:nth-of-type(3) .card__expander {
-    margin-left: calc(-100%);
+    margin-left: calc(-200%);
   }
 
   .carousel-seat:nth-of-type(4) .card__expander {
@@ -776,10 +761,14 @@ body {
   }
 
   .carousel-seat:nth-of-type(5) .card__expander {
-    margin-left: calc(-300%);
+    margin-left: calc(-200%);
   }
   .carousel-seat:nth-of-type(6) .card__expander {
-    margin-left: calc(-400%);
+    margin-left: calc(-200%);
+  }
+
+  .carousel-seat:nth-of-type(7) .card__expander {
+    margin-left: calc(-200%);
   }
 
   .card:nth-of-type(3n+2) .card__expander {
