@@ -55,34 +55,79 @@ var wrap = $('.wrap');
 var timesleft = 0;
 
 $('.toggle.right').on('click', function(e) {
- 
 
-   if(timesleft < 1){
-    carousel.animate({left: - $('.carousel-seat').width() * 2 })
-    timesleft++
-   }
+  if ( $('.wrap').width() > 640) {
+     if(timesleft === 1){
+      carousel.animate({left: - $('.carousel-seat').width() * 5 })
+      timesleft++;
+     }
 
+  }else if( $('.wrap').width() < 640  && $('.wrap').width() > 560 ){
+    var remainder = $('.carousel-seat').length % 3;
+    var increments = Math.floor( $('.carousel-seat').length / 3);
+
+    if( (timesleft + 1) < increments){
+      ++timesleft;
+      carousel.animate({left: - $('.carousel-seat').width() * ( 3 * timesleft) })
+     
+    }else if( (timesleft + 1) === increments && remainder > 0){
+      carousel.animate({left: - $('.carousel-seat').width() * ( ( 3 * timesleft) + remainder)})
+    }
+  }else{
+
+    var remainder = $('.carousel-seat').length % 2;
+    var increments = Math.floor( $('.carousel-seat').length / 2);
+    console.log(timesleft)
+    console.log(increments)
+    if( (timesleft + 1) < increments){
+      ++timesleft;
+      carousel.animate({left: - $('.carousel-seat').width() * ( 2 * timesleft) })
+     
+    }else if( (timesleft + 1) === increments && remainder > 0){
+      carousel.animate({left: - $('.carousel-seat').width() * ( ( 2 * timesleft) + 1)})
+    }
+  }
 
 })
 
 
 
 $('.toggle.left').on('click', function(e) {
- 
-   if(timesleft >= 1){
-    carousel.animate({left: 0 })
-    timesleft = 0
-   }
-  
+
+  if ( $('.wrap').width() > 640) {
+     if(timesleft >= 1){
+        carousel.animate({left: 0 })
+        timesleft = 0;
+     }
+  }else if( $('.wrap').width() < 640  && $('.wrap').width() > 560 ){
+    console.log(timesleft)
+    if(timesleft <= 1){
+        carousel.animate({left: 0 })
+        timesleft = 0;
+     }else{
+        console.log(timesleft)
+        timesleft--;
+        carousel.animate({left: - $('.carousel-seat').width() * ( 3 * timesleft) })
+     }
+  }else{
+     if(timesleft <= 1){
+        carousel.animate({left: 0 })
+        timesleft = 0;
+     }else{
+      timesleft--;
+     carousel.animate({left: - $('.carousel-seat').width() * ( 2 * timesleft) })
+     }
+
+  }
+
 
 })
-
 
 
 var resize = function(){
 
     carousel.animate({left: 0 })
-    timesleft = 0
+    timesleft = 0;
 
 }
 
