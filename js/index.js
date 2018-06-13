@@ -84,8 +84,8 @@ $('.toggle.right').on('click', function(e) {
 
     var remainder = $('.carousel-seat').length % 2;
     var increments = Math.floor( $('.carousel-seat').length / 2);
-    console.log(timesleft)
-    console.log(increments)
+    // console.log(timesleft)
+    // console.log(increments)
     if( (timesleft + 1) < increments){
       ++timesleft;
       carousel.animate({left: - $('.carousel-seat').width() * ( 2 * timesleft) })
@@ -102,17 +102,20 @@ $('.toggle.right').on('click', function(e) {
 $('.toggle.left').on('click', function(e) {
 
   if ( $('.wrap').width() > 640) {
-     if(timesleft >= 1){
+     if(timesleft <= 1){
         carousel.animate({left: 0 })
         timesleft = 0;
+     }else if (timesleft > 1){
+      timesleft--;
+      carousel.animate({left: - $('.carousel-seat').width() * ( 5 * timesleft) })
      }
   }else if( $('.wrap').width() < 640  && $('.wrap').width() > 560 ){
-    console.log(timesleft)
+    // console.log(timesleft)
     if(timesleft <= 1){
         carousel.animate({left: 0 })
         timesleft = 0;
-     }else{
-        console.log(timesleft)
+     }else if (timesleft > 1){
+        // console.log(timesleft)
         timesleft--;
         carousel.animate({left: - $('.carousel-seat').width() * ( 3 * timesleft) })
      }
@@ -120,9 +123,9 @@ $('.toggle.left').on('click', function(e) {
      if(timesleft <= 1){
         carousel.animate({left: 0 })
         timesleft = 0;
-     }else{
-      timesleft--;
-     carousel.animate({left: - $('.carousel-seat').width() * ( 2 * timesleft) })
+     }else if (timesleft > 1){
+        timesleft--;
+        carousel.animate({left: - $('.carousel-seat').width() * ( 2 * timesleft) })
      }
 
   }
