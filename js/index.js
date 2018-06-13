@@ -1,49 +1,94 @@
-(function() {
-  var carousel, next, prev, seats;
+// (function() {
+//   var carousel, next, prev, seats;
 
-  carousel = $('.carousel');
+//   carousel = $('.carousel');
 
-  seats = $('.carousel-seat');
+//   seats = $('.carousel-seat');
 
-  if(seats.length)
+//   if(seats.length)
 
-  next = function(el) {
-    if (el.next().length > 0) {
-      return el.next();
-    } else {
-      return seats.first();
-    }
-  };
+//   next = function(el) {
+//     if (el.next().length > 0) {
+//       return el.next();
+//     } else {
+//       return seats.first();
+//     }
+//   };
 
-  prev = function(el) {
-    if (el.prev().length > 0) {
-      return el.prev();
-    } else {
-      return seats.last();
-    }
-  };
+//   prev = function(el) {
+//     if (el.prev().length > 0) {
+//       return el.prev();
+//     } else {
+//       return seats.last();
+//     }
+//   };
 
-  $('.toggle').on('click', function(e) {
-    var el, i, j, new_seat, ref;
-    el = $('.is-ref').removeClass('is-ref');
-    if ($(e.currentTarget).data('toggle') === 'next') {
-      new_seat = next(el);
-      carousel.removeClass('is-reversing');
-    } else {
-      new_seat = prev(el);
-      carousel.addClass('is-reversing');
-    }
-    new_seat.addClass('is-ref').css('order', 1);
-    for (i = j = 2, ref = seats.length; (2 <= ref ? j <= ref : j >= ref); i = 2 <= ref ? ++j : --j) {
-      new_seat = next(new_seat).css('order', i);
-    }
-    carousel.removeClass('is-set');
-    return setTimeout((function() {
-      return carousel.addClass('is-set');
-    }), 50);
-  });
+//   $('.toggle').on('click', function(e) {
+//     var el, i, j, new_seat, ref;
+//     el = $('.is-ref').removeClass('is-ref');
+//     if ($(e.currentTarget).data('toggle') === 'next') {
+//       new_seat = next(el);
+//       carousel.removeClass('is-reversing');
+//     } else {
+//       new_seat = prev(el);
+//       carousel.addClass('is-reversing');
+//     }
+//     new_seat.addClass('is-ref').css('order', 1);
+//     for (i = j = 2, ref = seats.length; (2 <= ref ? j <= ref : j >= ref); i = 2 <= ref ? ++j : --j) {
+//       new_seat = next(new_seat).css('order', i);
+//     }
+//     carousel.removeClass('is-set');
+//     return setTimeout((function() {
+//       return carousel.addClass('is-set');
+//     }), 50);
+//   });
 
-}).call(this);
+// }).call(this);
+
+
+//   var carousel, next, prev, seats;
+
+//   carousel = $('.carousel');
+
+var carousel = $('.carousel');
+var wrap = $('.wrap');
+var timesleft = 0;
+
+$('.toggle.right').on('click', function(e) {
+ 
+
+   if(timesleft < 1){
+    carousel.animate({left: - $('.carousel-seat').width() * 2 })
+    timesleft++
+   }
+
+
+})
+
+
+
+$('.toggle.left').on('click', function(e) {
+ 
+   if(timesleft >= 1){
+    carousel.animate({left: 0 })
+    timesleft = 0
+   }
+  
+
+})
+
+
+
+var resize = function(){
+
+    carousel.animate({left: 0 })
+    timesleft = 0
+
+}
+
+
+window.onresize = resize
+
 
 
 var $cell = $('.card');
@@ -52,6 +97,12 @@ var $cell = $('.card');
 $cell.find('.js-expander').click(function() {
 
   var $thisCell = $(this).closest('.card');
+
+
+    var offset = $thisCell.offset()
+    var marginLeft = offset.left - 105;
+    $thisCell.children('.card__expander').css({'margin-left': '-' + marginLeft + "px" })
+
 
   if ($thisCell.hasClass('is-collapsed')) {
     $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
