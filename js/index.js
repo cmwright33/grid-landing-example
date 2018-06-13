@@ -57,10 +57,17 @@ var timesleft = 0;
 $('.toggle.right').on('click', function(e) {
 
   if ( $('.wrap').width() > 640) {
-     if(timesleft === 1){
-      carousel.animate({left: - $('.carousel-seat').width() * 5 })
-      timesleft++;
-     }
+
+    var remainder = $('.carousel-seat').length % 5;
+    var increments = Math.floor( $('.carousel-seat').length / 5);
+
+    if( (timesleft + 1) < increments){
+      ++timesleft;
+      carousel.animate({left: - $('.carousel-seat').width() * ( 5 * timesleft) })
+     
+    }else if( (timesleft + 1) === increments && remainder > 0){
+      carousel.animate({left: - $('.carousel-seat').width() * ( ( 5 * timesleft) + remainder)})
+    }
 
   }else if( $('.wrap').width() < 640  && $('.wrap').width() > 560 ){
     var remainder = $('.carousel-seat').length % 3;
