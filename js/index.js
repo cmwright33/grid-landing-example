@@ -1,6 +1,5 @@
 
 
-
 var timesRight = 0;
 
 $('.toggle.left').on('click', function(){
@@ -54,6 +53,101 @@ $('.toggle.right').on('click', function(){
   window.onresize = resize;
 
 
+var carousel = $('.carousel');
+var wrap = $('.wrap');
+var timesleft = 0;
+
+$('.toggle.right').on('click', function(e) {
+
+  if ( $('.wrap').width() > 640) {
+
+    var remainder = $('.carousel-seat').length % 5;
+    var increments = Math.floor( $('.carousel-seat').length / 5);
+
+    if( (timesleft + 1) < increments){
+      ++timesleft;
+      carousel.animate({left: - $('.carousel-seat').width() * ( 5 * timesleft) })
+     
+    }else if( (timesleft + 1) === increments && remainder > 0){
+      carousel.animate({left: - $('.carousel-seat').width() * ( ( 5 * timesleft) + remainder)})
+    }
+
+  }else if( $('.wrap').width() < 640  && $('.wrap').width() > 560 ){
+    var remainder = $('.carousel-seat').length % 3;
+    var increments = Math.floor( $('.carousel-seat').length / 3);
+
+    if( (timesleft + 1) < increments){
+      ++timesleft;
+      carousel.animate({left: - $('.carousel-seat').width() * ( 3 * timesleft) })
+     
+    }else if( (timesleft + 1) === increments && remainder > 0){
+      carousel.animate({left: - $('.carousel-seat').width() * ( ( 3 * timesleft) + remainder)})
+    }
+  }else{
+
+    var remainder = $('.carousel-seat').length % 2;
+    var increments = Math.floor( $('.carousel-seat').length / 2);
+    // console.log(timesleft)
+    // console.log(increments)
+    if( (timesleft + 1) < increments){
+      ++timesleft;
+      carousel.animate({left: - $('.carousel-seat').width() * ( 2 * timesleft) })
+     
+    }else if( (timesleft + 1) === increments && remainder > 0){
+      carousel.animate({left: - $('.carousel-seat').width() * ( ( 2 * timesleft) + 1)})
+    }
+  }
+
+})
+
+
+
+$('.toggle.left').on('click', function(e) {
+
+  if ( $('.wrap').width() > 640) {
+     if(timesleft <= 1){
+        carousel.animate({left: 0 })
+        timesleft = 0;
+     }else if (timesleft > 1){
+      timesleft--;
+      carousel.animate({left: - $('.carousel-seat').width() * ( 5 * timesleft) })
+     }
+  }else if( $('.wrap').width() < 640  && $('.wrap').width() > 560 ){
+    // console.log(timesleft)
+    if(timesleft <= 1){
+        carousel.animate({left: 0 })
+        timesleft = 0;
+     }else if (timesleft > 1){
+        // console.log(timesleft)
+        timesleft--;
+        carousel.animate({left: - $('.carousel-seat').width() * ( 3 * timesleft) })
+     }
+  }else{
+     if(timesleft <= 1){
+        carousel.animate({left: 0 })
+        timesleft = 0;
+     }else if (timesleft > 1){
+        timesleft--;
+        carousel.animate({left: - $('.carousel-seat').width() * ( 2 * timesleft) })
+     }
+
+  }
+
+
+})
+
+
+var resize = function(){
+
+    carousel.animate({left: 0 })
+    timesleft = 0;
+
+}
+
+
+window.onresize = resize
+
+
 var $cell = $('.card');
 
 //open and close card when clicked on card
@@ -61,10 +155,9 @@ $cell.find('.js-expander').click(function() {
 
   var $thisCell = $(this).closest('.card');
 
-  var offset = $thisCell.offset();
-  var leftOffset = offset.left - 105;
-  console.log($thisCell.children('.card__expander'))
-  $thisCell.children('.card__expander').css( { 'margin-left': "-" + leftOffset + "px"});
+    var offset = $thisCell.offset()
+    var marginLeft = offset.left - 105;
+    $thisCell.children('.card__expander').css({'margin-left': '-' + marginLeft + "px" })
 
   if ($thisCell.hasClass('is-collapsed')) {
     $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
